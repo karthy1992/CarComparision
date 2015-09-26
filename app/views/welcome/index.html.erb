@@ -1,0 +1,41 @@
+<h1>Welcome:</h1>
+<p><%= link_to "admin" , controller: "crawler" , action: "getinput" %> </p>
+
+
+<%= form_tag( { controller: 'carfeatures' , action:'getfeatures'}, {method: "get"}) do %>
+  
+<p> Car Compare </p>
+
+<div id="identification">
+
+<div id="detail_1" style = "float: left ; width: 30%">
+<p>
+Select Manufacturer </p>
+<p>
+<%= collection_select(:manufacturer1, :id, Manufacturer.all, :id, :name, {:prompt => true}, {id: 'manufacturers_select_1'}) %>
+</p>
+<p> Select CarModel </p>
+
+<p>
+<%= collection_select(:model1, :id, Model.all, :id, :name,{:prompt => true}, {id: 'models_select_1',remote: true} )%>
+</p>
+
+
+<p> Select Carvariant </p>
+<p>
+<%= collection_select(:variant1, :id, Variant.all, :id, :name, {:prompt => true}, {id: 'variants_select_1',remote: true}) %>
+</p>
+</div>
+</div>
+<div style="clear:left" > </div>
+<button type="button" id ="Add_another">Add Car to Compare</button>
+
+<p>
+<div style="right: 100px">
+<%= submit_tag("Compare") %> 
+</div>
+</p>
+
+<% end %>
+
+</p>

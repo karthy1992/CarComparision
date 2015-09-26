@@ -1,0 +1,2 @@
+class VariantController < ApplicationController
+end

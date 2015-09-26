@@ -1,0 +1,19 @@
+
+<div id="detail_2" style = "float: left ; width: 30%">
+<p>
+Select Manufacturer </p>
+<p>
+<%= collection_select(:manufacturer2, :id, Manufacturer.all, :id, :name, {:prompt => true}, {id: 'manufacturers_select_2'}) %>
+</p>
+<p> Select CarModel </p>
+
+<p>
+<%= collection_select(:model2, :id, Model.all, :id, :name,{:prompt => true}, {id: 'models_select_2',remote: true} )%>
+</p>
+
+
+<p> Select Carvariant </p>
+<p>
+<%= collection_select(:variant2, :id, Variant.all, :id, :name, {:prompt => true}, {id: 'variants_select_2',remote: true}) %>
+</p>
+</div>
